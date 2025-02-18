@@ -1,6 +1,6 @@
 import { defineConfig } from '@rspack/cli';
 import { rspack } from '@rspack/core';
-import { resolve } from "path";
+import { resolve } from 'path';
 import * as RefreshPlugin from '@rspack/plugin-react-refresh';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -26,19 +26,7 @@ export default defineConfig({
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: {
-                                    tailwindcss: {},
-                                    autoprefixer: {},
-                                },
-                            },
-                        },
-                    },
-                ],
+                use: ['postcss-loader'],
                 type: 'css',
             },
             {
